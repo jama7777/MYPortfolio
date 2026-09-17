@@ -724,48 +724,11 @@
         <div class="container">
             <h2 class="section-title">Experience & Internships</h2>
             <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div class="experience-icon">
-                            <i class="fab fa-google"></i>
-                        </div>
-                        <div>
-                            <h3>Google Generative AI Internship</h3>
-                            <p><strong>AICTE</strong></p>
-                            <p class="text-muted">2024</p>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Worked on generative AI projects using Google's advanced AI models</li>
-                        <li>Gained experience with state-of-the-art generative AI technologies</li>
-                        <li>Developed practical skills in prompt engineering and model fine-tuning</li>
-                    </ul>
-                </div>
                 
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div class="experience-icon">
-                            <i class="fab fa-python"></i>
-                        </div>
-                        <div>
-                            <h3>Python Developer Intern</h3>
-                            <p><strong>VXL IT SOLUTIONS</strong></p>
-                            <p class="text-muted">July 2024 - Sept 2024</p>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Learned Python from basics to advanced concepts</li>
-                        <li>Mastered NumPy and Pandas for data manipulation</li>
-                        <li>Developed an Image Classification project</li>
-                        <li>Gained practical experience in machine learning workflows</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="section projects" id="projects">
+    <section class="section projects" id="projects-old" style="display:none">
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
@@ -1040,6 +1003,85 @@
         </div>
     </section>
 
+    <!-- Unnanu Projects - Updated Sep 2026 -->
+    <section class="section" id="projects" style="background:#fff">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            
+            <div class="experience-grid">
+                <div class="experience-card" style="border-left:4px solid #059669">
+                    <div class="experience-header">
+                        <div class="experience-icon" style="background:linear-gradient(135deg,#059669,#10b981)"><i class="fas fa-phone-volume"></i></div>
+                        <div><h3>BCJC 311 Voice AI — Boone County (150K+ calls/yr)</h3><p><strong>Unnanu, Inc. • Lead Build</strong> • May 2026–Present</p></div>
+                    </div>
+                    <p style="color:#444"><b>Initial:</b> Boone County 150K+ non-emergency 311 calls/yr — 5-layer FastAPI • Azure Speech/Voice Live • Groq qwen3-27b / Azure Llama-3.3-70B • Azure SQL/Blob • Twilio • Next.js 15, &lt;1.5s, 80ms barge-in, APCO/NENA ≥0.85 auto-escalates EMS/FIRE/POLICE, 60-category, EN/ES bilingual, 208-call RFP zero-miss.</p>
+                    <p style="color:#444;margin-top:.6rem"><b>Now:</b> Multi-county architecture (<code>docs/MULTI_COUNTY_ARCHITECTURE.md</code>) — one deployment serves many counties, each owning complete catalogue (4 families / 60 services / 649 questions as real rows, no merge — one query <code>WHERE county_key=?</code> §3).</p>
+                    <ul style="margin-top:.6rem;color:#555;font-size:.93rem">
+                        <li>Configuration plane (/configuration UI + config API validate/audit/version) decoupled from call plane (county resolver via dialled number → ContextVar → catalogue.load() lru_cache on county+config_version → RealtimeAgent → guardrail §4) — 9 readers unchanged via Mapping proxies</li>
+                        <li>Live without deploy: edit flips origin→county, bumps <code>config_version</code>, audit row in one TX — next call N+1, no restart (BR-6); protected fields refused (BR-7); template sync via drift report §10</li>
+                        <li>Current: handling county UI configurations — each county edits wording/enables/reorders via UI, isolated (B edit never appears on A)</li>
+                    </ul>
+                    <p style="margin-top:.6rem"><span class="tag">Voice AI</span><span class="tag">FastAPI</span><span class="tag">Azure</span><span class="tag">Twilio</span><span class="tag">LLM</span></p>
+                </div>
+                <div class="experience-card" style="border-left:4px solid #4f46e5">
+                    <div class="experience-header">
+                        <div class="experience-icon"><i class="fas fa-search"></i></div>
+                        <div><h3>RAG Atlas — Qdrant + BM25 Hybrid</h3><p><strong>github.com/jama7777/rag-atlas</strong> • Sep 2026</p></div>
+                    </div>
+                    <p>Hybrid search over ~5k docs with Gemma CBOW embeddings. Split from embedding-atlas. Benchmarked BM25 vs hybrid vs cross-encoder rerank vs Unnanu Search.</p>
+                    <p><span class="tag">RAG</span><span class="tag">Qdrant</span><span class="tag">BM25</span><span class="tag">Embeddings</span></p>
+                    <a href="https://github.com/jama7777/rag-atlas" target="_blank">GitHub →</a>
+                </div>
+                <div class="experience-card" style="border-left:4px solid #7c3aed">
+                    <div class="experience-header">
+                        <div class="experience-icon" style="background:linear-gradient(135deg,#7c3aed,#a855f7)"><i class="fas fa-font"></i></div>
+                        <div><h3>Tokenizer Labs — BPE/WordPiece</h3><p><strong>github.com/jama7777/tokenizer-labs</strong> • Sep 2026</p></div>
+                    </div>
+                    <p>BPE / WordPiece training demos: why tokenizers freeze after training, how corpus changes token IDs. Train_bpe_compare + frozen demo.</p>
+                    <p><span class="tag">Tokenizer</span><span class="tag">BPE</span><span class="tag">NLP</span></p>
+                    <a href="https://github.com/jama7777/tokenizer-labs" target="_blank">GitHub →</a>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon" style="background:linear-gradient(135deg,#ef4444,#f59e0b)"><i class="fas fa-vial"></i></div>
+                        <div><h3>Context-QA Benchmark — Llama vs Qwen</h3><p><strong>github.com/jama7777/context-qa-benchmark</strong> • Sep 2026</p></div>
+                    </div>
+                    <p>Empirical Lost-in-the-Middle benchmark: Llama-3.2-1B vs Qwen-2.5-0.5B speed/accuracy. Enterprise benchmark paper PDFs included.</p>
+                    <p><span class="tag">Benchmark</span><span class="tag">LLM Eval</span><span class="tag">RAG</span></p>
+                    <a href="https://github.com/jama7777/context-qa-benchmark" target="_blank">GitHub →</a>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon" style="background:linear-gradient(135deg,#0ea5e9,#6366f1)"><i class="fas fa-microscope"></i></div>
+                        <div><h3>DeepViz Harness — Verifiable Explanations</h3><p><strong>github.com/jama7777/deepviz_harness</strong> • Sep 2026</p></div>
+                    </div>
+                    <p>"Don't fool yourself" harness: 13-rule sympy-gated JSON → interactive HTML (MathML + canvas). Feynman principle, fully machine-verified.</p>
+                    <p><span class="tag">Sympy</span><span class="tag">Harness</span><span class="tag">Python</span></p>
+                    <a href="https://github.com/jama7777/deepviz_harness" target="_blank">GitHub →</a>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon" style="background:linear-gradient(135deg,#111827,#374151)"><i class="fas fa-flask"></i></div>
+                        <div><h3>Steering Labs — Qwen / DeepSeek / Llama</h3><p><strong>qwen-steering-lab • deepseek-steering-lab • llama-layer-ablation</strong> • Sep 2026</p></div>
+                    </div>
+                    <p>Layer-ablation & steering vector experiments across Qwen, DeepSeek, Llama families. Split from embedding-atlas, updated Sep 12.</p>
+                    <p><span class="tag">Steering</span><span class="tag">Ablation</span><span class="tag">LLM Research</span></p>
+                    <a href="https://github.com/jama7777/qwen-steering-lab" target="_blank">Qwen →</a> <a href="https://github.com/jama7777/deepseek-steering-lab" target="_blank">DeepSeek →</a>
+                </div>
+            </div>
+
+                <div class="experience-card" style="border-left:4px solid #f59e0b">
+                    <div class="experience-header">
+                        <div class="experience-icon" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><i class="fas fa-wand-magic-sparkles"></i></div>
+                        <div><h3>Prompt Engineering — Preprocessing Layer</h3><p><strong>Unnanu • Preprocessing</strong> • May 2026–Present</p></div>
+                    </div>
+                    <p>Systematic prompt refinement for LLM instruction tuning — failure-mode analysis, edge-case iteration, and preprocessing-layer optimization to improve response quality across Unnanu Search pipelines.</p>
+                    <p><span class="tag">Prompt Eng</span><span class="tag">Preprocessing</span><span class="tag">LLM</span><span class="tag">RAG</span></p>
+                </div>
+            <p style="text-align:center;margin-top:1.5rem;color:#666">All 10 new repos • Sep 12, 2026 • <a href="https://github.com/jama7777?tab=repositories&sort=updated" target="_blank" style="font-weight:700">github.com/jama7777 (22 repos)</a></p>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="container">
@@ -1083,13 +1125,13 @@
                         <a href="mailto:jama.gottipati7@gmail.com" class="social-link">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="https://linkedin.com/in/gottipati-jamadagni" class="social-link" target="_blank">
+                        <a href="https://www.linkedin.com/in/jamadagni-gottipati-0a52ab281/" class="social-link" target="_blank">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://github.com/jamadagni-gottipati" class="social-link" target="_blank">
+                        <a href="https://github.com/jama7777" class="social-link" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://twitter.com/jama_gottipati" class="social-link" target="_blank">
+                        <a href="https://github.com/jama7777" class="social-link" target="_blank">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </div>
@@ -1124,7 +1166,7 @@
             <p>Built with passion for AI/ML | Ready to innovate and contribute to the future of technology</p>
             <p>here is my Linked in profile https://www.linkedin.com/in/jamadagni-gottipati-0a52ab281</p>
         </div>
-    </footer>
+    <p>Portfolio: https://jama7777.github.io/MYPortfolio/ • GitHub: https://github.com/jama7777</p></footer>
 
     <script>
         // Smooth scrolling for navigation links
