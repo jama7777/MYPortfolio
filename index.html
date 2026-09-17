@@ -1012,9 +1012,9 @@
                 <div class="experience-card" style="border-left:4px solid #059669">
                     <div class="experience-header">
                         <div class="experience-icon" style="background:linear-gradient(135deg,#059669,#10b981)"><i class="fas fa-phone-volume"></i></div>
-                        <div><h3>BCJC 311 Voice AI — Boone County (150K+ calls/yr)</h3><p><strong>Unnanu, Inc. • Lead Build</strong> • May 2026–Present</p></div>
+                        <div><h3>Multi-County 311 Voice AI — Configuration Plane (150K+ calls/yr)</h3><p><strong>Unnanu, Inc. • Lead Build</strong> • May 2026–Present</p></div>
                     </div>
-                    <p style="color:#444"><b>Initial:</b> Boone County 150K+ non-emergency 311 calls/yr — 5-layer FastAPI • Azure Speech/Voice Live • Groq qwen3-27b / Azure Llama-3.3-70B • Azure SQL/Blob • Twilio • Next.js 15, &lt;1.5s, 80ms barge-in, APCO/NENA ≥0.85 auto-escalates EMS/FIRE/POLICE, 60-category, EN/ES bilingual, 208-call RFP zero-miss.</p>
+                    <p style="color:#444"><b><b>Initial:</b></b> 150K+ non-emergency 311 calls/yr — 5-layer FastAPI • Azure Speech/Voice Live • Groq qwen3-27b / Azure Llama-3.3-70B • Azure SQL/Blob • Twilio • Next.js 15, &lt;1.5s, 80ms barge-in, APCO/NENA ≥0.85 auto-escalates EMS/FIRE/POLICE, 60-category, EN/ES bilingual, 208-call RFP zero-miss.</p>
                     <p style="color:#444;margin-top:.6rem"><b>Now:</b> Multi-county architecture (<code>docs/MULTI_COUNTY_ARCHITECTURE.md</code>) — one deployment serves many counties, each owning complete catalogue (4 families / 60 services / 649 questions as real rows, no merge — one query <code>WHERE county_key=?</code> §3).</p>
                     <ul style="margin-top:.6rem;color:#555;font-size:.93rem">
                         <li>Configuration plane (/configuration UI + config API validate/audit/version) decoupled from call plane (county resolver via dialled number → ContextVar → catalogue.load() lru_cache on county+config_version → RealtimeAgent → guardrail §4) — 9 readers unchanged via Mapping proxies</li>
